@@ -94,7 +94,7 @@ class SVfitStandaloneAlgorithm
   void marginalizeVisMass(bool value, TFile* inputFile);
   void marginalizeVisMass(bool value, const TH1*);
   /// take resolution on energy and mass of hadronic tau decays into account
-  void shiftVisMass(bool value, TFile* inputFile);
+  void shiftVisMass(bool value);
   void shiftVisPt(bool value, TFile* inputFile);
   /// maximum function calls after which to stop the minimization procedure (default is 5000)
   void maxObjFunctionCalls(double value) { maxObjFunctionCalls_ = value; }
