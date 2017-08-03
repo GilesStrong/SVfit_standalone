@@ -41,7 +41,7 @@ void singleEvent()
   edm::FileInPath inputFileName_visPtResolution("TauAnalysis/SVfitStandalone/data/svFitVisMassAndPtResolutionPDF.root");
   TH1::AddDirectory(false);  
   TFile* inputFile_visPtResolution = new TFile(inputFileName_visPtResolution.fullPath().data());
-  algo.shiftVisPt(true, inputFile_visPtResolution);
+  algo.shiftVisPt(true);
   //algo.shiftVisPt2(true);
   /* 
      the following lines show how to use the different methods on a single event
