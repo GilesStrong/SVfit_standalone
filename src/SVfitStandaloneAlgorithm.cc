@@ -195,12 +195,14 @@ SVfitStandaloneAlgorithm::shiftVisPt(bool value, TFile* inputFile)
 {
   shiftVisPt_ = value;
   if ( shiftVisPt_ ) {
+    TFile* inputFile = new TFile("TauAnalysis/SVfitStandalone/data/svFitVisMassAndPtResolutionPDF.root");
     delete lutVisPtResDM0_;
     lutVisPtResDM0_ = readHistogram(inputFile, "recTauPtDivGenTauPt_recDecayModeEq0");
     delete lutVisPtResDM1_;
     lutVisPtResDM1_ = readHistogram(inputFile, "recTauPtDivGenTauPt_recDecayModeEq1");
     delete lutVisPtResDM10_;
     lutVisPtResDM10_ = readHistogram(inputFile, "recTauPtDivGenTauPt_recDecayModeEq10");
+    delete inputFile;
   }
 }
 
