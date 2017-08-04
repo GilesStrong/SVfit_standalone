@@ -175,11 +175,11 @@ SVfitStandaloneAlgorithm::marginalizeVisMass(bool value, const TH1* lut)
 }
 
 void
-SVfitStandaloneAlgorithm::shiftVisMass(bool value)
+SVfitStandaloneAlgorithm::shiftVisMass(bool value, TString fileName)
 {
   shiftVisMass_ = value;
   if ( shiftVisMass_ ) {
-    TFile* inputFile = new TFile("TauAnalysis/SVfitStandalone/data/svFitVisMassAndPtResolutionPDF.root");
+    TFile* inputFile = new TFile(fileName);
     delete lutVisMassResDM0_;
     lutVisMassResDM0_ = readHistogram(inputFile, "recMinusGenTauMass_recDecayModeEq0");
     delete lutVisMassResDM1_;
@@ -191,11 +191,11 @@ SVfitStandaloneAlgorithm::shiftVisMass(bool value)
 }
 
 void
-SVfitStandaloneAlgorithm::shiftVisPt(bool value)
+SVfitStandaloneAlgorithm::shiftVisPt(bool value, TSring fileName)
 {
   shiftVisPt_ = value;
   if ( shiftVisPt_ ) {
-    TFile* inputFile = new TFile("TauAnalysis/SVfitStandalone/data/svFitVisMassAndPtResolutionPDF.root");
+    TFile* inputFile = new TFile(fileName);
     delete lutVisPtResDM0_;
     lutVisPtResDM0_ = readHistogram(inputFile, "recTauPtDivGenTauPt_recDecayModeEq0");
     delete lutVisPtResDM1_;
