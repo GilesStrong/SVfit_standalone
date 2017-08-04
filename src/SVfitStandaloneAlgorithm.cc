@@ -191,7 +191,7 @@ SVfitStandaloneAlgorithm::shiftVisMass(bool value, TString fileName)
 }
 
 void
-SVfitStandaloneAlgorithm::shiftVisPt(bool value, TSring fileName)
+SVfitStandaloneAlgorithm::shiftVisPt(bool value, TString fileName)
 {
   shiftVisPt_ = value;
   if ( shiftVisPt_ ) {
